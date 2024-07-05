@@ -32,4 +32,8 @@ $router->addRoute('/members', function () use ($userController) {
   $userController->members();
 });
 
+$router->addRoute('/logout', function () use ($userController) {
+  $userController->logout();
+});
+
 $router->handleRequest($_SERVER['REQUEST_URI']);

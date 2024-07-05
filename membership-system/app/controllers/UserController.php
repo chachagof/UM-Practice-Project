@@ -37,4 +37,12 @@ class UserController
       require '../app/views/members.php';
     }
   }
+
+  public function logout()
+  {
+    session_unset();
+    session_destroy();
+    header('Location: /login');
+    exit();
+  }
 }

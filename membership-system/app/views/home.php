@@ -17,7 +17,9 @@
           <div class="card-body text-center">
             <h5 class="card-title">會員資料</h5>
             <p class="card-text">Email: <?php echo $userEmail; ?></p>
+
             <a href="members" class="btn btn-primary">修改會員資料</a>
+            <a href="logout" class="btn btn-danger">登出</a>
           </div>
         </div>
       </div>
