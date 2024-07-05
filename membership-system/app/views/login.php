@@ -11,7 +11,7 @@
 <body>
   <div class="container col-4">
     <h2 class="text-center mt-5">登入</h2>
-    <form action="home" method="POST" class="mt-4">
+    <form action="login" method="POST" class="mt-4">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" name="email" required>

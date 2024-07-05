@@ -11,7 +11,7 @@
 <body>
   <div class="container col-4">
     <h2 class="text-center mt-5">修改</h2>
-    <form action="login" method="POST" class="mt-4">
+    <form action="members" method="POST" class="mt-4">
       <div class="form-group">
         <label for="name">姓名</label>
         <input type="text" class="form-control" id="name" name="name" required>
