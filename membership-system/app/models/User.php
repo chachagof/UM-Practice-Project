@@ -64,4 +64,15 @@ class User
 
     return true;
   }
+
+  public function getAllUsers()
+  {
+    try {
+      $stmt = $this->db->query("SELECT id, name, email FROM users");
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      echo "Fetch all users failed: " . $e->getMessage() . "<br>";
+      return [];
+    }
+  }
 }

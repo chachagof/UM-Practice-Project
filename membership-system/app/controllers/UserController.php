@@ -45,4 +45,14 @@ class UserController
     header('Location: /login');
     exit();
   }
+
+  public function userList()
+  {
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: /login');
+      exit();
+    }
+    $users = $this->userModel->getAllUsers();
+    require '../app/views/userList.php';
+  }
 }
