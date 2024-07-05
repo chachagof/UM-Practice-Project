@@ -14,7 +14,8 @@ class AuthController
       $name = $_POST['name'];
       $email = $_POST['email'];
       $password = $_POST['password'];
-      $this->userModel->register($name, $email, $password);
+      $confirmPassword = $_POST['confirmPassword'];
+      $this->userModel->register($name, $email, $password, $confirmPassword);
       header('Location: /login');
     } else {
       require '../app/views/register.php';

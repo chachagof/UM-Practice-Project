@@ -8,9 +8,8 @@ class User
     $this->db = $db;
   }
 
-  public function register($name, $email, $password)
+  public function register($name, $email, $password, $confirmPassword)
   {
-    // 檢查電子郵件是否已經存在
     $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
@@ -20,7 +19,9 @@ class User
     if ($user) {
       throw new Exception("Email already exists");
     }
-
+    if ($password !== $confirmPassword) {
+      throw new Exception('Passwords do not match');
+    }
     $stmt = $this->db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
     $stmt->bindValue(':name', $name, PDO::PARAM_STR);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);

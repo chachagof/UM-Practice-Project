@@ -24,6 +24,10 @@
         <label for="password">密碼</label>
         <input type="password" class="form-control" id="password" name="password" required>
       </div>
+      <div class="form-group">
+        <label for="confirm-password">確認密碼</label>
+        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+      </div>
       <button type="submit" class="btn btn-primary btn-block">註冊</button>
       <p class="text-center mt-3">
         <a href="login">已有帳號？登入</a>
