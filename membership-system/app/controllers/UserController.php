@@ -55,4 +55,21 @@ class UserController
     $users = $this->userModel->getAllUsers();
     require '../app/views/userList.php';
   }
+
+  public function deleteUser()
+  {
+    if (!isset($_SESSION['user_id'])) {
+      header('Location: /login');
+      exit();
+    }
+    if (isset($_POST['user_id']) && $_POST['user_id'] == $_SESSION['user_id']) {
+      $this->userModel->deleteUser($_SESSION['user_id']);
+      session_unset();
+      session_destroy();
+      header('Location: /login');
+      exit();
+    } else {
+      echo "Unauthorized action";
+    }
+  }
 }

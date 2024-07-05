@@ -40,4 +40,8 @@ $router->addRoute('/userList', function () use ($userController) {
   $userController->userList();
 });
 
+$router->addRoute('/delete_user', function () use ($userController) {
+  $userController->deleteUser();
+});
+
 $router->handleRequest($_SERVER['REQUEST_URI']);

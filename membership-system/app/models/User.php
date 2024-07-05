@@ -75,4 +75,17 @@ class User
       return [];
     }
   }
+
+  public function deleteUser($id)
+  {
+    try {
+      $stmt = $this->db->prepare("DELETE FROM users WHERE id = :id");
+      $stmt->bindParam(':id', $id);
+      $stmt->execute();
+      return true;
+    } catch (PDOException $e) {
+      echo "Delete user failed: " . $e->getMessage() . "<br>";
+      return false;
+    }
+  }
 }
