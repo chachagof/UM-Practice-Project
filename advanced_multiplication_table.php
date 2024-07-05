@@ -14,7 +14,7 @@ if ($argc === 3) {
   $start = (int)$argv[1];
   $end = (int)$argv[2];
 
-  if ($start > 0 && $start <= 9 && $end > 0 && $end >= 9) {
+  if ($start > 0 && $start <= 9 && $end > 0 && $end <= 9) {
     multiplication_table($start, $end);
   } else {
     echo "參數範圍 0 ~ 9";
